@@ -1,0 +1,472 @@
+/* ============================================================
+   Novi Refrigas — Custom Styles
+   Tailwind CSS handles utilities; this file covers animations,
+   the WhatsApp float button, and dark-mode base tweaks.
+   ============================================================ */
+
+/* ── Google Font fallback (loaded via <link> in HTML) ──────── */
+* {
+  box-sizing: border-box;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* ── Hero gradient (fallback si el video no carga) ─────────── */
+.hero-gradient {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 40%, #0f172a 100%);
+}
+
+/* ── Hero video background ─────────────────────────────────── */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+/* Overlay azul oscuro: hace el video más oscuro y mantiene legibilidad del texto */
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 20, 60, 0.80) 0%,
+    rgba(15, 40, 110, 0.68) 50%,
+    rgba(10, 20, 60, 0.80) 100%
+  );
+  z-index: 1;
+}
+
+/* ── Floating WhatsApp Button ──────────────────────────────── */
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.12);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-float:active {
+  transform: scale(0.97);
+}
+
+/* Pulse ring */
+.whatsapp-float::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.4);
+  animation: wa-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes wa-ping {
+  0%   { transform: scale(1);   opacity: 0.8; }
+  70%  { transform: scale(1.55); opacity: 0; }
+  100% { transform: scale(1.55); opacity: 0; }
+}
+
+/* Red notification dot */
+.whatsapp-dot {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 14px;
+  height: 14px;
+  background-color: #ef4444;
+  border: 2px solid white;
+  border-radius: 50%;
+  animation: dot-bounce 1.8s ease-in-out infinite;
+}
+
+@keyframes dot-bounce {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.25); }
+}
+
+/* ======================================================
+   SECCIONES AZUL OSCURO — overrides de color
+   ====================================================== */
+
+/* H2 de sección (sobre fondo azul oscuro) → blanco */
+#confianza h2, #catalogo h2, #servicios h2, #logistica h2 {
+  color: #ffffff !important;
+}
+/* H3 van dentro de cards blancas → negro */
+#confianza h3, #catalogo h3, #servicios h3, #logistica h3 {
+  color: #0f172a !important;
+}
+
+/* Subtítulos descriptivos de sección */
+#confianza .text-center p,
+#catalogo  .text-center p,
+#servicios .text-center p,
+#logistica .text-center p {
+  color: #94a3b8 !important;
+}
+
+/* Labels superiores (CATÁLOGO, SERVICIOS…) */
+#confianza span.uppercase, #catalogo span.uppercase,
+#servicios span.uppercase, #logistica span.uppercase {
+  color: #60a5fa !important;
+}
+
+/* ---------- Trust cards (Por qué elegirnos) ---------- */
+.trust-card {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+.trust-card h3                   { color: #0f172a !important; }
+.trust-card p                    { color: #475569 !important; }
+.trust-card:nth-child(1):hover   { border-left-color: #3b82f6; }
+.trust-card:nth-child(2):hover   { border-left-color: #22c55e; }
+.trust-card:nth-child(3):hover   { border-left-color: #a855f7; }
+
+/* ---------- Product cards (Catálogo) ---------- */
+.product-card {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+.product-card h3                 { color: #0f172a !important; }
+.product-card p                  { color: #475569 !important; }
+.product-card .text-xs.font-bold { color: #334155 !important; }
+.product-card li                 { color: #475569 !important; }
+.product-card .border-gray-100   { border-color: #e2e8f0 !important; }
+.product-card .bg-blue-100       { background-color: #dbeafe !important; color: #1d4ed8 !important; }
+.product-card .bg-orange-100     { background-color: #ffedd5 !important; color: #c2410c !important; }
+.product-card .bg-teal-100       { background-color: #ccfbf1 !important; color: #0f766e !important; }
+
+/* ---------- Brand / tag pills ---------- */
+.brand-tag {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+.brand-tag-orange {
+  background-color: #ffedd5;
+  color: #9a3412;
+}
+
+/* ---------- Service cards (Servicios) ---------- */
+.service-card {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+.service-card h3                 { color: #0f172a !important; }
+.service-card p                  { color: #475569 !important; }
+.service-card .bg-green-50       { background-color: #f0fdf4 !important; }
+.service-card .bg-purple-50      { background-color: #faf5ff !important; }
+.service-card .text-green-700    { color: #15803d !important; }
+.service-card .text-purple-700   { color: #7e22ce !important; }
+.service-card .border-gray-100   { border-color: #e2e8f0 !important; }
+
+/* Logística — tarjetas blancas, sin overrides necesarios */
+
+/* ── Logo instances ────────────────────────────────────────── */
+
+/*
+  Técnica sin editar la imagen:
+  - border-radius quita el aspecto "cuadrado cortante"
+  - En fondos oscuros (footer, dark mode) mix-blend-mode:screen funde
+    el fondo azul del logo con el fondo oscuro haciéndolo casi invisible.
+  - Para el resultado perfecto (sin fondo azul en fondo blanco) exporta
+    la imagen con fondo transparente en https://remove.bg (gratis).
+*/
+
+/* Navbar logo */
+.navbar-logo {
+  height: 40px;
+  width: auto;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+@media (min-width: 1024px) {
+  .navbar-logo {
+    height: 80px;
+  }
+}
+.navbar-logo:hover {
+  transform: scale(1.04);
+}
+
+/* Hero — imagen principal lado derecho */
+.hero-logo {
+  width: 200px;
+  height: auto;
+  display: block;
+  border-radius: 28px;
+  filter:
+    drop-shadow(0 0 30px rgba(99, 179, 237, 0.55))
+    drop-shadow(0 0 60px rgba(59, 130, 246, 0.30));
+}
+
+@media (min-width: 1024px) {
+  .hero-logo {
+    width: 340px;
+  }
+}
+
+/* Animación de flotación suave */
+.hero-logo-float {
+  animation: heroFloat 4s ease-in-out infinite;
+}
+
+@keyframes heroFloat {
+  0%   { transform: translateY(0px);   }
+  50%  { transform: translateY(-14px); }
+  100% { transform: translateY(0px);   }
+}
+
+/* Badges flotantes con animaciones desfasadas */
+.badge-float-1 {
+  animation: badgeFloat1 5s ease-in-out infinite;
+}
+.badge-float-2 {
+  animation: badgeFloat2 5s ease-in-out infinite;
+}
+
+@keyframes badgeFloat1 {
+  0%, 100% { transform: translateY(0px)   rotate(-1deg); }
+  50%       { transform: translateY(-8px)  rotate(1deg);  }
+}
+@keyframes badgeFloat2 {
+  0%, 100% { transform: translateY(0px)  rotate(1deg);  }
+  50%       { transform: translateY(-6px) rotate(-1deg); }
+}
+
+/* Footer — fondo siempre oscuro, blend funciona bien */
+.footer-logo {
+  height: 64px;
+  width: auto;
+  display: block;
+  border-radius: 14px;
+  mix-blend-mode: screen; /* el azul del logo se funde con el gris/negro del footer */
+  opacity: 0.95;
+  transition: opacity 0.2s ease;
+}
+.footer-logo:hover {
+  opacity: 1;
+}
+
+/* ── Brand / tag pills ─────────────────────────────────────── */
+.brand-tag {
+  display: inline-block;
+  background-color: #dbeafe;
+  color: #1e40af;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+.dark .brand-tag {
+  background-color: rgba(30, 64, 175, 0.3);
+  color: #93c5fd;
+}
+
+.brand-tag-orange {
+  display: inline-block;
+  background-color: #ffedd5;
+  color: #9a3412;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+.dark .brand-tag-orange {
+  background-color: rgba(154, 52, 18, 0.3);
+  color: #fdba74;
+}
+
+/* ── CTA primary hover glow ────────────────────────────────── */
+.cta-primary {
+  position: relative;
+  overflow: hidden;
+}
+.cta-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+.cta-primary:hover::after {
+  transform: translateX(100%);
+}
+
+/* ── Section fade-in on scroll ─────────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Navbar shadow on scroll ───────────────────────────────── */
+#navbar.scrolled {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+}
+.dark #navbar.scrolled {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Smooth focus ring for a11y ────────────────────────────── */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Trust card left-border accent on hover ────────────────── */
+.trust-card {
+  border-left: 3px solid transparent;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.trust-card:nth-child(1):hover { border-left-color: #3b82f6; }
+.trust-card:nth-child(2):hover { border-left-color: #22c55e; }
+.trust-card:nth-child(3):hover { border-left-color: #a855f7; }
+
+/* ── Product card image shine ──────────────────────────────── */
+.product-card .h-44 {
+  position: relative;
+  overflow: hidden;
+}
+.product-card .h-44::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.15);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+.product-card:hover .h-44::after {
+  left: 130%;
+}
+
+/* ── Título hero ───────────────────────────────────────────── */
+
+/* Texto blanco con sombra profunda para no verse plano */
+.hero-title-white {
+  color: #ffffff;
+  text-shadow:
+    0 2px 8px  rgba(0, 0, 0, 0.55),
+    0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* "Refrigeración," — gradiente azul-cian con resplandor */
+.hero-title-accent {
+  background: linear-gradient(90deg, #60a5fa 0%, #38bdf8 55%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 10px rgba(56, 189, 248, 0.55))
+          drop-shadow(0 0  20px rgba(129, 140, 248, 0.35));
+}
+
+/* "Aire Acondicionado" — gradiente teal-esmeralda */
+.hero-title-accent-teal {
+  background: linear-gradient(90deg, #2dd4bf 0%, #34d399 55%, #6ee7b7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 10px rgba(45, 212, 191, 0.55))
+          drop-shadow(0 0  20px rgba(52, 211, 153, 0.35));
+}
+
+/* "Gasodomésticos" — gradiente naranja-ámbar */
+.hero-title-accent-amber {
+  background: linear-gradient(90deg, #fb923c 0%, #fbbf24 55%, #f97316 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 10px rgba(251, 146, 60, 0.55))
+          drop-shadow(0 0  20px rgba(251, 191, 36, 0.35));
+}
+
+/* ── Stats sobre video (texto blanco con sombra) ───────────── */
+.hero-stat-number {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(59, 130, 246, 0.4);
+  line-height: 1.2;
+}
+
+.hero-stat-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+  margin-top: 2px;
+}
+
+/* ── Responsive typography tweaks ──────────────────────────── */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2.25rem;
+    line-height: 1.15;
+  }
+}
+
+/* ── Dark mode color transitions ───────────────────────────── */
+body,
+header,
+section,
+footer,
+div,
+p,
+h1, h2, h3, h4,
+a,
+ul, li {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
