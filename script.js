@@ -170,16 +170,14 @@
 /* ── Modal Precios Aires Acondicionados ───────────────────── */
 function openPreciosAC() {
   var modal = document.getElementById('modal-precios-ac');
-  modal.classList.remove('hidden');
-  modal.classList.add('open');
+  modal.style.display = 'flex';
   document.body.style.overflow = 'hidden';
   if (typeof lucide !== 'undefined') lucide.createIcons();
 }
 
 function closePreciosAC() {
   var modal = document.getElementById('modal-precios-ac');
-  modal.classList.add('hidden');
-  modal.classList.remove('open');
+  modal.style.display = 'none';
   document.body.style.overflow = '';
 }
 
@@ -188,10 +186,10 @@ function switchAcBrand(tabEl, panelId) {
     t.classList.remove('ac-tab-active');
   });
   document.querySelectorAll('.ac-panel').forEach(function(p) {
-    p.classList.add('hidden');
+    p.style.display = 'none';
   });
   tabEl.classList.add('ac-tab-active');
-  document.getElementById(panelId).classList.remove('hidden');
+  document.getElementById(panelId).style.display = 'block';
 }
 
 document.addEventListener('keydown', function(e) {

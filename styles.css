@@ -460,10 +460,6 @@ button:focus-visible {
 }
 
 /* ── Modal precios Aires Acondicionados ─────────────────────── */
-#modal-precios-ac.open {
-  display: flex;
-}
-
 .ac-tab {
   padding: 0.65rem 1.1rem;
   font-size: 0.8rem;
