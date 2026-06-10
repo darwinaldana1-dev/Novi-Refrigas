@@ -50,6 +50,7 @@
   z-index: 0;
 }
 
+
 /* Overlay azul oscuro: hace el video más oscuro y mantiene legibilidad del texto */
 .hero-video-overlay {
   position: absolute;
