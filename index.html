@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Novi Refrigas – Instalación, reparación y mantenimiento de aires acondicionados, calentadores y equipos de refrigeración en el Valle de Aburrá y toda Colombia." />
+  <title>Novi Refrigas | Refrigeración, Aire Acondicionado y Gasodomésticos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50:  '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            },
+            dark: {
+              bg:    '#0f172a',
+              card:  '#1e293b',
+              border:'#334155',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          animation: {
+            'pulse-slow': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'bounce-slow': 'bounce 2s infinite',
+            'fade-in': 'fadeIn 0.6s ease-out forwards',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-[#0d1b3e] text-gray-800 font-sans antialiased">
+
+  <!-- ===================== WHATSAPP FLOTANTE ===================== -->
+  <a href="https://wa.me/573145252746?text=Hola%20Novi%20Refrigas%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n."
+     target="_blank" rel="noopener noreferrer"
+     class="whatsapp-float"
+     aria-label="Contactar por WhatsApp">
+    <span class="whatsapp-dot"></span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="30" height="30">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 dark:bg-dark-bg/95 backdrop-blur-sm border-b border-gray-100 dark:border-dark-border">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-14 lg:h-24">
+
+        <!-- Logo -->
+        <a href="#inicio" class="flex items-center">
+          <img src="logo.png" alt="Novi Refrigas" class="navbar-logo" />
+        </a>
+
+        <!-- Nav Links (desktop) -->
+        <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-300">
+          <li><a href="#inicio"     class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Inicio</a></li>
+          <li><a href="#confianza"  class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Nosotros</a></li>
+          <li><a href="#catalogo"   class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Catálogo</a></li>
+          <li><a href="#servicios"  class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Servicios</a></li>
+          <li><a href="#logistica"  class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Envíos y Pagos</a></li>
+          <li>
+            <a href="https://wa.me/573145252746?text=Hola%20Novi%20Refrigas%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n."
+               target="_blank" rel="noopener noreferrer"
+               class="bg-primary-700 hover:bg-primary-800 text-white px-4 py-2 rounded-lg transition-colors">
+              Cotizar
+            </a>
+          </li>
+        </ul>
+
+        <!-- Right controls -->
+        <div class="flex items-center gap-3">
+          <!-- Mobile menu toggle -->
+          <button id="menu-toggle" class="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-dark-card hover:bg-gray-200 dark:hover:bg-dark-border transition-colors" aria-label="Abrir menú">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-gray-100 mt-2 pt-4">
+        <ul class="flex flex-col gap-3 text-sm font-medium text-gray-600 dark:text-gray-300">
+          <li><a href="#inicio"    onclick="closeMobileMenu()" class="block py-1 hover:text-primary-600 dark:hover:text-primary-400">Inicio</a></li>
+          <li><a href="#confianza" onclick="closeMobileMenu()" class="block py-1 hover:text-primary-600 dark:hover:text-primary-400">Nosotros</a></li>
+          <li><a href="#catalogo"  onclick="closeMobileMenu()" class="block py-1 hover:text-primary-600 dark:hover:text-primary-400">Catálogo</a></li>
+          <li><a href="#servicios" onclick="closeMobileMenu()" class="block py-1 hover:text-primary-600 dark:hover:text-primary-400">Servicios</a></li>
+          <li><a href="#logistica" onclick="closeMobileMenu()" class="block py-1 hover:text-primary-600 dark:hover:text-primary-400">Envíos y Pagos</a></li>
+          <li>
+            <a href="https://wa.me/573145252746?text=Hola%20Novi%20Refrigas%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n."
+               target="_blank" rel="noopener noreferrer"
+               class="inline-block bg-primary-700 text-white px-4 py-2 rounded-lg mt-1">
+              Cotizar por WhatsApp
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section id="inicio" class="relative min-h-screen flex items-center overflow-hidden pt-24">
+      <!-- Background Video -->
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="hero-video.mp4" type="video/mp4">
+      </video>
+      <!-- Overlay azul oscuro para legibilidad -->
+      <div class="hero-video-overlay"></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-0 lg:py-32">
+        <div class="grid lg:grid-cols-2 gap-1 lg:gap-12 items-center">
+
+          <!-- Text Content -->
+          <div class="animate-fade-in">
+            <span class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/25 text-white text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+              Servicio certificado con garantía real
+            </span>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6">
+              <span class="hero-title-white">Expertos en</span><br/>
+              <span class="hero-title-accent">Refrigeración,</span><br/>
+              <span class="hero-title-accent-teal">Aire Acondicionado</span><br/>
+              <span class="hero-title-accent-amber">y Gasodomésticos.</span>
+            </h1>
+
+            <p class="text-lg sm:text-xl text-white/85 mb-4 leading-relaxed">
+              Instalación, reparación y mantenimiento de equipos domésticos e industriales con total garantía.
+            </p>
+
+            <p class="text-base text-primary-200 font-semibold mb-10 flex items-center gap-2">
+              <i data-lucide="check-circle-2" class="w-5 h-5 flex-shrink-0"></i>
+              Sin sobrecostos sorpresa, con puntualidad y un excelente servicio postventa.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="https://wa.me/573145252746?text=Hola%20Novi%20Refrigas%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n."
+                 target="_blank" rel="noopener noreferrer"
+                 class="cta-primary inline-flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold text-lg px-8 py-4 rounded-xl shadow-lg shadow-green-500/30 transition-all duration-200 hover:scale-105 active:scale-95">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-6 h-6">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Cotiza por WhatsApp
+              </a>
+              <a href="#catalogo"
+                 class="inline-flex items-center justify-center gap-2 border-2 border-white/70 text-white hover:bg-white hover:text-primary-800 font-semibold text-base px-6 py-4 rounded-xl transition-all duration-200">
+                Ver catálogo
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+
+            <!-- Stats bar -->
+            <div class="mt-12 grid grid-cols-3 gap-4 pt-8 border-t border-white/20">
+              <div>
+                <p class="hero-stat-number">+5 años</p>
+                <p class="hero-stat-label">de experiencia</p>
+              </div>
+              <div>
+                <p class="hero-stat-number">6–8 meses</p>
+                <p class="hero-stat-label">de garantía</p>
+              </div>
+              <div>
+                <p class="hero-stat-number">100%</p>
+                <p class="hero-stat-label">servicio garantizado</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Image/Visual -->
+          <div class="flex justify-center items-center py-0 lg:py-12 order-first lg:order-last">
+            <div class="relative flex justify-center items-center">
+
+              <!-- Resplandor de fondo (capa más lejana) -->
+              <div class="absolute w-80 h-80 bg-blue-500/20 rounded-full blur-3xl -z-10"></div>
+              <div class="absolute w-56 h-56 bg-indigo-400/15 rounded-full blur-2xl -z-10"></div>
+
+              <!-- Logo libre con animación flotante -->
+              <img src="logo.png" alt="Novi Refrigas" class="hero-logo hero-logo-float relative z-10" />
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 animate-bounce-slow z-10">
+        <p class="text-xs font-medium">Conoce más</p>
+        <i data-lucide="chevron-down" class="w-5 h-5"></i>
+      </div>
+    </section>
+
+    <!-- ===================== POR QUÉ ELEGIRNOS ===================== -->
+    <section id="confianza" class="py-20 lg:py-28 bg-[#0d1b3e]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-14">
+          <span class="text-sm font-semibold text-primary-600 dark:text-primary-400 uppercase tracking-widest">¿Por qué elegirnos?</span>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-black text-gray-900 dark:text-white">Tu tranquilidad es nuestra prioridad</h2>
+          <p class="mt-4 text-gray-500 dark:text-gray-400 max-w-xl mx-auto">Entendemos los problemas que surgen con un mal servicio técnico. Por eso construimos Novi Refrigas sobre tres pilares fundamentales.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+          <!-- Card 1 -->
+          <div class="trust-card group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1">
+            <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/40 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <i data-lucide="badge-dollar-sign" class="w-7 h-7 text-blue-600 dark:text-blue-400"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Precios justos y transparentes</h3>
+            <p class="text-gray-500 dark:text-gray-400 leading-relaxed">
+              Recibirás una cotización clara desde el primer contacto. Sin costos ocultos, sin sorpresas al finalizar. Lo que acordamos, es lo que pagas.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="trust-card group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1">
+            <div class="w-14 h-14 bg-green-100 dark:bg-green-900/40 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <i data-lucide="clock-4" class="w-7 h-7 text-green-600 dark:text-green-400"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Puntualidad y orden absoluto</h3>
+            <p class="text-gray-500 dark:text-gray-400 leading-relaxed">
+              Llegamos a tiempo, trabajamos con total limpieza y dejamos el espacio exactamente como lo encontramos. Tu hogar o negocio merece ese respeto.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="trust-card group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 hover:-translate-y-1">
+            <div class="w-14 h-14 bg-purple-100 dark:bg-purple-900/40 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <i data-lucide="shield-check" class="w-7 h-7 text-purple-600 dark:text-purple-400"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Garantía real postventa</h3>
+            <p class="text-gray-500 dark:text-gray-400 leading-relaxed">
+              Ofrecemos entre 6 y 8 meses de garantía en mano de obra. Si algo falla por nuestra parte, lo resolvemos sin costo adicional. Así de simple.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- CTA Banner -->
+        <div class="mt-14 bg-primary-800 dark:bg-primary-900 rounded-3xl p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <p class="text-white font-black text-xl sm:text-2xl">¿Listo para un servicio que cumple?</p>
+            <p class="text-primary-200 mt-1 text-sm">Escríbenos ahora y recibe tu cotización sin compromisos.</p>
+          </div>
+          <a href="https://wa.me/573145252746?text=Hola%20Novi%20Refrigas%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n."
+             target="_blank" rel="noopener noreferrer"
+             class="flex-shrink-0 inline-flex items-center gap-3 bg-white text-primary-800 font-bold px-7 py-3.5 rounded-xl hover:bg-primary-50 transition-colors shadow-lg">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            Cotizar ahora
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== CATÁLOGO ===================== -->
+    <section id="catalogo" class="py-20 lg:py-28 bg-[#0a1628]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-14">
+          <span class="text-sm font-semibold text-primary-600 dark:text-primary-400 uppercase tracking-widest">Catálogo</span>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-black text-gray-900 dark:text-white">Equipos de primera calidad</h2>
+          <p class="mt-4 text-gray-500 dark:text-gray-400 max-w-xl mx-auto">Vendemos e instalamos equipos de las marcas más confiables del mercado, con asesoría personalizada y entrega incluida.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+          <!-- Card: Aires Acondicionados -->
+          <div class="product-card flex flex-col bg-white dark:bg-dark-card rounded-2xl overflow-hidden border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="h-52 relative overflow-hidden">
+              <img src="aire-tecnico.jpg" alt="Técnico instalando aire acondicionado Novi Refrigas"
+                   class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+              <div class="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent"></div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-xs font-semibold bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 px-2.5 py-1 rounded-full">Venta e Instalación</span>
+              </div>
+              <h3 class="text-xl font-black text-gray-900 dark:text-white mt-3 mb-2">Aires Acondicionados</h3>
+              <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Equipos split y multi-split para uso doméstico e industrial, con instalación profesional incluida.</p>
+
+              <div class="space-y-2 mb-5">
+                <p class="text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide">Marcas disponibles:</p>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="brand-tag">Mirage</span><span class="brand-tag">LG</span><span class="brand-tag">Samsung</span>
+                  <span class="brand-tag">Trane</span><span class="brand-tag">York</span><span class="brand-tag">Mabe</span>
+                  <span class="brand-tag">Midea</span>
+                </div>
+              </div>
+
+              <div class="border-t border-gray-100 pt-4 mb-5">
+                <p class="text-xs font-bold text-gray-700 dark:text-gray-300 mb-2 uppercase tracking-wide">La instalación incluye:</p>
+                <ul class="space-y-1.5 text-sm text-gray-600 dark:text-gray-400">
+                  <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0"></i>3 metros de tubería de cobre</li>
+                  <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0"></i>Cable de señal</li>
+                  <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0"></i>Transporte incluido</li>
+                </ul>
+              </div>
+
+              <a href="https://wa.me/573145252746?text=Hola%2C%20me%20interesa%20un%20aire%20acondicionado.%20%C2%BFPodr%C3%ADan%20asesorarme%3F"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-auto inline-flex items-center justify-center gap-2 bg-primary-700 hover:bg-primary-800 text-white font-semibold py-3 px-5 rounded-xl transition-colors text-sm">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                Solicitar cotización
+              </a>
+            </div>
+          </div>
+
+          <!-- Card: Calentadores -->
+          <div class="product-card flex flex-col bg-white dark:bg-dark-card rounded-2xl overflow-hidden border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="h-52 relative overflow-hidden">
+              <img src="Calentador-tecnico.png" alt="Técnico instalando calentador de agua Novi Refrigas"
+                   class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+              <div class="absolute inset-0 bg-gradient-to-t from-orange-900/40 to-transparent"></div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-xs font-semibold bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 px-2.5 py-1 rounded-full">Venta e Instalación</span>
+              </div>
+              <h3 class="text-xl font-black text-gray-900 dark:text-white mt-3 mb-2">Calentadores de Agua</h3>
+              <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Calentadores a gas instantáneos para hogares de todos los tamaños, instalados correctamente y con garantía.</p>
+
+              <div class="space-y-2 mb-5">
+                <p class="text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide">Marcas disponibles:</p>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="brand-tag-orange">Bosch</span><span class="brand-tag-orange">Rheem</span>
+                  <span class="brand-tag-orange">Bocherini</span><span class="brand-tag-orange">Challenger</span>
+                </div>
+              </div>
+
+              <div class="border-t border-gray-100 pt-4 mb-5">
+                <p class="text-xs font-bold text-gray-700 dark:text-gray-300 mb-2 uppercase tracking-wide">Capacidades:</p>
+                <ul class="space-y-1.5 text-sm text-gray-600 dark:text-gray-400">
+                  <li class="flex items-center gap-2"><i data-lucide="droplets" class="w-4 h-4 text-blue-500 flex-shrink-0"></i>Desde 5.5 litros/minuto</li>
+                  <li class="flex items-center gap-2"><i data-lucide="droplets" class="w-4 h-4 text-blue-500 flex-shrink-0"></i>Hasta 21 litros/minuto</li>
+                  <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0"></i>Instalación certificada</li>
+                </ul>
+              </div>
+
+              <a href="https://wa.me/573145252746?text=Hola%2C%20me%20interesa%20un%20calentador%20de%20agua.%20%C2%BFPodr%C3%ADan%20asesorarme%3F"
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-auto inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-5 rounded-xl transition-colors text-sm">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                Solicitar cotización
+              </a>
+            </div>
+          </div>
+
+          <!-- Card: Refrigeración Industrial -->
+          <div class="product-card flex flex-col bg-white dark:bg-dark-card rounded-2xl overflow-hidden border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="h-52 relative overflow-hidden">
+              <img src="Refrigeracion-tecnico.png" alt="Refrigeración industrial Novi Refrigas"
+                   class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+              <div class="absolute inset-0 bg-gradient-to-t from-teal-900/40 to-transparent"></div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-xs font-semibold bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 px-2.5 py-1 rounded-full">Uso Comercial</span>
+              </div>
+              <h3 class="text-xl font-black text-gray-900 dark:text-white mt-3 mb-2">Refrigeración Industrial</h3>
+              <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Neveras, exhibidoras y equipos de refrigeración para negocios, restaurantes y almacenes de toda escala.</p>
+
+              <div class="border-t border-gray-100 pt-4 mb-5">
+                <p class="text-xs font-bold text-gray-700 dark:text-gray-300 mb-2 uppercase tracking-wide">Incluye:</p>
+                <ul class="space-y-1.5 text-sm text-gray-600 dark:text-gray-400">
+                  <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0"></i>Asesoría para elegir el equipo correcto</li>
+                  <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0"></i>Instalación y puesta en marcha</li>
+                  <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0"></i>Garantía en mano de obra</li>
+                  <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500 flex-shrink-0"></i>Mantenimiento preventivo</li>
+                </ul>
+              </div>
+
+              <a href="https://wa.me/573145252716?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20neveras%20industriales."
+                 target="_blank" rel="noopener noreferrer"
+                 class="mt-auto inline-flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-5 rounded-xl transition-colors text-sm">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                Solicitar cotización
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SERVICIOS ===================== -->
+    <section id="servicios" class="py-20 lg:py-28 bg-[#0d1b3e]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-14">
+          <span class="text-sm font-semibold text-primary-600 dark:text-primary-400 uppercase tracking-widest">Servicios</span>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-black text-gray-900 dark:text-white">Soluciones técnicas especializadas</h2>
+          <p class="mt-4 text-gray-500 dark:text-gray-400 max-w-xl mx-auto">Más allá de la venta, ofrecemos servicios técnicos que aseguran el óptimo funcionamiento de tus equipos a largo plazo.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Servicio 1: Instalación Profesional -->
+          <div class="service-card bg-white rounded-2xl p-7 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/40 rounded-xl flex items-center justify-center mb-5">
+              <i data-lucide="wrench" class="w-6 h-6 text-primary-600 dark:text-primary-400"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Instalación Profesional</h3>
+            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4">
+              Instalamos aires acondicionados y calentadores garantizando conexiones seguras, correctas y duraderas. Seguimos protocolos técnicos para cada tipo de equipo.
+            </p>
+            <a href="https://wa.me/573145252746?text=Hola%2C%20necesito%20una%20instalaci%C3%B3n%20profesional."
+               target="_blank" rel="noopener noreferrer"
+               class="text-sm font-semibold text-primary-600 dark:text-primary-400 flex items-center gap-1 hover:gap-2 transition-all">
+              Solicitar instalación <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <!-- Servicio 2: Mantenimiento Preventivo -->
+          <div class="service-card bg-white rounded-2xl p-7 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <div class="w-12 h-12 bg-green-100 dark:bg-green-900/40 rounded-xl flex items-center justify-center mb-5">
+              <i data-lucide="settings" class="w-6 h-6 text-green-600 dark:text-green-400"></i>
+            </div>
+            <div class="flex items-start justify-between mb-2">
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white">Mantenimiento Preventivo y Predictivo</h3>
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-3">
+              Limpieza profunda, revisión de componentes y diagnóstico completo para maximizar la vida útil y eficiencia de tu equipo.
+            </p>
+            <div class="bg-green-50 dark:bg-green-900/20 rounded-lg px-3 py-2 mb-4">
+              <p class="text-xs font-bold text-green-700 dark:text-green-400">Desde $90.000 hasta $400.000 COP</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400">según tipo y tamaño del equipo</p>
+            </div>
+            <a href="https://wa.me/573145252746?text=Hola%2C%20quiero%20un%20mantenimiento%20preventivo."
+               target="_blank" rel="noopener noreferrer"
+               class="text-sm font-semibold text-green-600 dark:text-green-400 flex items-center gap-1 hover:gap-2 transition-all">
+              Agendar mantenimiento <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <!-- Servicio 3: Asesoría Técnica -->
+          <div class="service-card bg-white rounded-2xl p-7 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 md:col-span-2 lg:col-span-1">
+            <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/40 rounded-xl flex items-center justify-center mb-5">
+              <i data-lucide="user-check" class="w-6 h-6 text-purple-600 dark:text-purple-400"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Asesoría Técnica Presencial</h3>
+            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-3">
+              Un técnico especializado visita tu propiedad, evalúa el estado de tus equipos y te recomienda la mejor solución, sin presiones de venta.
+            </p>
+            <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg px-3 py-2 mb-4">
+              <p class="text-xs font-bold text-purple-700 dark:text-purple-400">Visita: $60.000 COP</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400">No se cobra si adquieres el servicio o equipo</p>
+            </div>
+            <a href="https://wa.me/573145252746?text=Hola%2C%20quisiera%20agendar%20una%20asesor%C3%ADa%20t%C3%A9cnica."
+               target="_blank" rel="noopener noreferrer"
+               class="text-sm font-semibold text-purple-600 dark:text-purple-400 flex items-center gap-1 hover:gap-2 transition-all">
+              Agendar visita técnica <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== LOGÍSTICA Y PAGOS ===================== -->
+    <section id="logistica" class="py-20 lg:py-28 bg-[#0a1628]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-14">
+          <span class="text-sm font-semibold text-primary-400 uppercase tracking-widest">Logística y Pagos</span>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-black text-white">Llegamos a donde estés</h2>
+          <p class="mt-4 text-slate-300 max-w-xl mx-auto">Hacemos entregas en todo Colombia con operadores logísticos de confianza, y aceptamos múltiples formas de pago.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+
+          <!-- Cobertura -->
+          <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-11 h-11 bg-primary-100 rounded-xl flex items-center justify-center">
+                <i data-lucide="map-pin" class="w-6 h-6 text-primary-600"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900">Cobertura de envíos</h3>
+            </div>
+
+            <div class="space-y-5">
+              <div class="flex gap-4 p-4 bg-slate-50 rounded-xl border border-slate-200">
+                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="building-2" class="w-5 h-5 text-green-600"></i>
+                </div>
+                <div>
+                  <p class="font-bold text-slate-900 text-sm">Valle de Aburrá</p>
+                  <p class="text-slate-600 text-sm mt-0.5">Entrega en 1 día hábil</p>
+                  <span class="inline-block mt-1.5 text-xs font-semibold text-green-700 bg-green-100 px-2 py-0.5 rounded-full">Sin costo de envío</span>
+                </div>
+              </div>
+
+              <div class="flex gap-4 p-4 bg-slate-50 rounded-xl border border-slate-200">
+                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="truck" class="w-5 h-5 text-blue-600"></i>
+                </div>
+                <div>
+                  <p class="font-bold text-slate-900 text-sm">Resto del país</p>
+                  <p class="text-slate-600 text-sm mt-0.5">Entrega de 1 a 3 días hábiles</p>
+                  <div class="flex gap-2 mt-1.5">
+                    <span class="text-xs font-semibold text-blue-700 bg-blue-100 px-2 py-0.5 rounded-full">Servientrega</span>
+                    <span class="text-xs font-semibold text-blue-700 bg-blue-100 px-2 py-0.5 rounded-full">Envía</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Métodos de Pago -->
+          <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-11 h-11 bg-primary-100 rounded-xl flex items-center justify-center">
+                <i data-lucide="credit-card" class="w-6 h-6 text-primary-600"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900">Métodos de pago</h3>
+            </div>
+
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200">
+                <i data-lucide="banknote" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                <p class="text-sm font-semibold text-slate-800">Efectivo</p>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200">
+                <i data-lucide="landmark" class="w-5 h-5 text-blue-500 flex-shrink-0"></i>
+                <p class="text-sm font-semibold text-slate-800">Transferencias Bancolombia</p>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200">
+                <i data-lucide="package" class="w-5 h-5 text-purple-500 flex-shrink-0"></i>
+                <p class="text-sm font-semibold text-slate-800">Pago contra entrega</p>
+              </div>
+            </div>
+
+            <div class="bg-primary-50 rounded-xl p-4 border border-primary-100">
+              <p class="text-xs font-bold text-primary-800 mb-2 uppercase tracking-wide">Modalidades de pago:</p>
+              <ul class="space-y-1.5 text-sm text-slate-700">
+                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-primary-600 flex-shrink-0"></i>100% anticipado</li>
+                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-primary-600 flex-shrink-0"></i>Anticipo + saldo contra entrega</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA FINAL ===================== -->
+    <section class="py-20 lg:py-24 bg-primary-900 dark:bg-primary-950 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle,white_1px,transparent_1px)] bg-[size:30px_30px]"></div>
+      <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">¿Tu equipo necesita atención?</h2>
+        <p class="text-primary-200 text-lg mb-10">Escríbenos por WhatsApp ahora mismo y te respondemos de inmediato. Sin formularios complicados, sin esperas innecesarias.</p>
+        <a href="https://wa.me/573145252746?text=Hola%20Novi%20Refrigas%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n."
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-3 bg-green-500 hover:bg-green-400 text-white font-bold text-xl px-10 py-5 rounded-2xl shadow-2xl shadow-green-900/50 transition-all duration-200 hover:scale-105 active:scale-95">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-7 h-7">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Escribir por WhatsApp
+        </a>
+        <p class="mt-5 text-primary-300 text-sm">Tiempo de respuesta promedio: menos de 30 minutos en horario laboral.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="bg-gray-900 dark:bg-black text-gray-300 pt-14 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+        <!-- Brand -->
+        <div class="lg:col-span-2">
+          <div class="mb-4">
+            <img src="logo.png" alt="Novi Refrigas" class="footer-logo" />
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
+            Expertos en instalación, mantenimiento y venta de equipos de refrigeración, aire acondicionado y gasodomésticos en Colombia.
+          </p>
+          <div class="mt-5 flex gap-3">
+            <a href="https://wa.me/573145252746" target="_blank" rel="noopener noreferrer"
+               class="w-9 h-9 bg-gray-800 hover:bg-green-600 rounded-lg flex items-center justify-center transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </a>
+            <a href="mailto:novirefrigas@gmail.com"
+               class="w-9 h-9 bg-gray-800 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-colors">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Servicios -->
+        <div>
+          <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-widest">Servicios</h4>
+          <ul class="space-y-2.5 text-sm text-gray-400">
+            <li><a href="#catalogo" class="hover:text-white transition-colors">Aires Acondicionados</a></li>
+            <li><a href="#catalogo" class="hover:text-white transition-colors">Calentadores de Agua</a></li>
+            <li><a href="#catalogo" class="hover:text-white transition-colors">Refrigeración Industrial</a></li>
+            <li><a href="#servicios" class="hover:text-white transition-colors">Mantenimiento Preventivo</a></li>
+            <li><a href="#servicios" class="hover:text-white transition-colors">Asesoría Técnica</a></li>
+          </ul>
+        </div>
+
+        <!-- Contacto -->
+        <div>
+          <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-widest">Contacto</h4>
+          <ul class="space-y-4 text-sm text-gray-400">
+            <li class="flex items-start gap-3">
+              <i data-lucide="phone" class="w-4 h-4 mt-0.5 text-primary-400 flex-shrink-0"></i>
+              <div>
+                <p class="text-gray-300 font-medium">WhatsApp</p>
+                <a href="https://wa.me/573145252746" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">314 525 2746</a>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="mail" class="w-4 h-4 mt-0.5 text-primary-400 flex-shrink-0"></i>
+              <div>
+                <p class="text-gray-300 font-medium">Correo electrónico</p>
+                <a href="mailto:novirefrigas@gmail.com" class="hover:text-white transition-colors break-all">novirefrigas@gmail.com</a>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="clock" class="w-4 h-4 mt-0.5 text-primary-400 flex-shrink-0"></i>
+              <div>
+                <p class="text-gray-300 font-medium">Horario de atención</p>
+                <p>Lunes a Sábado</p>
+                <p>6:00 AM – 6:00 PM</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="border-t border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-500">
+        <p>&copy; 2025 Novi Refrigas. Todos los derechos reservados.</p>
+        <p>Hecho con calidad en Colombia 🇨🇴</p>
+      </div>
+
+      <!-- Agency credit -->
+      <div class="border-t border-slate-800/50 mt-4 pt-4 text-center">
+        <p class="text-xs text-slate-500">
+          Desarrollo web y Agentes IA impulsados por
+          <a href="#" class="font-bold text-slate-400 hover:text-blue-400 transition-colors duration-200">JadeMind</a>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
