@@ -459,6 +459,65 @@ button:focus-visible {
   }
 }
 
+/* ── Modal precios Aires Acondicionados ─────────────────────── */
+#modal-precios-ac.open {
+  display: flex;
+}
+
+.ac-tab {
+  padding: 0.65rem 1.1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #6b7280;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+  background: transparent;
+  cursor: pointer;
+}
+.ac-tab:hover { color: #1d4ed8; }
+.ac-tab-active {
+  color: #1d4ed8;
+  border-bottom-color: #1d4ed8;
+}
+
+.ac-price-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+.ac-price-table thead tr {
+  background: #eff6ff;
+}
+.ac-price-table th {
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+  font-weight: 700;
+  color: #1e40af;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.ac-price-table th:last-child { text-align: right; }
+.ac-price-table td {
+  padding: 0.7rem 0.85rem;
+  border-bottom: 1px solid #f3f4f6;
+  color: #374151;
+}
+.ac-price-table td:last-child {
+  text-align: right;
+  font-weight: 700;
+  color: #1d4ed8;
+}
+.ac-price-table tbody tr:hover { background: #f8faff; }
+
+.ac-comercial-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
 /* ── Dark mode color transitions ───────────────────────────── */
 body,
 header,

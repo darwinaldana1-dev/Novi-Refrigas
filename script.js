@@ -166,3 +166,34 @@
     init();
   }
 })();
+
+/* ── Modal Precios Aires Acondicionados ───────────────────── */
+function openPreciosAC() {
+  var modal = document.getElementById('modal-precios-ac');
+  modal.classList.remove('hidden');
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  if (typeof lucide !== 'undefined') lucide.createIcons();
+}
+
+function closePreciosAC() {
+  var modal = document.getElementById('modal-precios-ac');
+  modal.classList.add('hidden');
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function switchAcBrand(tabEl, panelId) {
+  document.querySelectorAll('.ac-tab').forEach(function(t) {
+    t.classList.remove('ac-tab-active');
+  });
+  document.querySelectorAll('.ac-panel').forEach(function(p) {
+    p.classList.add('hidden');
+  });
+  tabEl.classList.add('ac-tab-active');
+  document.getElementById(panelId).classList.remove('hidden');
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closePreciosAC();
+});
