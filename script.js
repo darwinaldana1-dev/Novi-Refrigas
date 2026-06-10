@@ -128,23 +128,35 @@
     sections.forEach(function (s) { observer.observe(s); });
   }
 
-  /* ── 8. WHATSAPP FLOAT HIDE ON FOOTER ────────────────────── */
+  /* ── 8. WHATSAPP FLOAT HIDE ON FOOTER + HERO CTA ─────────── */
   function initWaFloatVisibility() {
-    const waBtn  = document.querySelector('.whatsapp-float');
-    const footer = document.querySelector('footer');
-    if (!waBtn || !footer) return;
+    const waBtn   = document.querySelector('.whatsapp-float');
+    const footer  = document.querySelector('footer');
+    const heroCta = document.getElementById('hero-cta-wa');
+    if (!waBtn) return;
 
-    const observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          waBtn.style.opacity    = entry.isIntersecting ? '0' : '1';
-          waBtn.style.pointerEvents = entry.isIntersecting ? 'none' : 'auto';
-        });
-      },
-      { threshold: 0.1 }
-    );
+    var heroVisible   = false;
+    var footerVisible = false;
 
-    observer.observe(footer);
+    function updateFloat() {
+      var hide = heroVisible || footerVisible;
+      waBtn.style.opacity       = hide ? '0' : '1';
+      waBtn.style.pointerEvents = hide ? 'none' : 'auto';
+    }
+
+    if (heroCta) {
+      new IntersectionObserver(function(entries) {
+        heroVisible = entries[0].isIntersecting;
+        updateFloat();
+      }, { threshold: 0.5 }).observe(heroCta);
+    }
+
+    if (footer) {
+      new IntersectionObserver(function(entries) {
+        footerVisible = entries[0].isIntersecting;
+        updateFloat();
+      }, { threshold: 0.1 }).observe(footer);
+    }
   }
 
   /* ── INIT ─────────────────────────────────────────────────── */
